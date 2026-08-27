@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Model Studio - Project Manager</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            background: #0F1117;
+            color: #ccc;
+            font-family: 'Segoe UI', sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tabs-header {
+            display: flex;
+            border-bottom: 1px solid #30363d;
+            background: #161b22;
+            height: 45px;
+            align-items: center;
+            gap: 0;
+            padding: 0 10px;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+
+        .tab-button {
+            padding: 8px 16px;
+            border: 1px solid transparent;
+            border-bottom: 2px solid transparent;
+            background: transparent;
+            color: #8b949e;
+            cursor: pointer;
+            font-size: 13px;
+            white-space: nowrap;
+            transition: all 0.2s;
+            border-radius: 4px 4px 0 0;
+            position: relative;
+        }
+
+        .tab-button:hover {
+            color: #c9d1d9;
+            background: rgba(48, 54, 61, 0.3);
+        }
+
+        .tab-button.active {
+            color: #58a6ff;
+            border-bottom-color: #58a6ff;
+            background: rgba(88, 166, 255, 0.1);
+        }
+
+        .tab-button .close-tab {
+            margin-left: 8px;
+            cursor: pointer;
+            display: inline-block;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .tab-button:hover .close-tab {
+            opacity: 1;
+        }
+
+        .tab-content {
+            flex: 1;
+            overflow: auto;
+            display: none;
+            padding: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Projects Tab Styles */
+        .projects-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .projects-header h1 {
+            font-size: 24px;
+            color: #c9d1d9;
+        }
+
+        .create-project-btn {
+            padding: 8px 16px;
+            background: #238636;
+            color: white;
+            border: 1px solid #2ea043;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .create-project-btn:hover {
+            background: #2ea043;
+            border-color: #3fb950;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 16px;
+        }
+
+        .project-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+            user-select: none;
+        }
+
+        .project-card:hover {
+            border-color: #58a6ff;
+            background: #0d1117;
+            box-shadow: 0 0 16px rgba(88, 166, 255, 0.1);
+        }
+
+        .project-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .project-card-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #c9d1d9;
+            word-break: break-word;
+            flex: 1;
+        }
+
+        .project-card-menu {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .project-card:hover .project-card-menu {
+            opacity: 1;
+        }
+
+        .project-card-menu::before {
+            content: '⋮';
+            font-size: 18px;
+            color: #8b949e;
+        }
+
+        .project-card-date {
+            font-size: 12px;
+            color: #6e7681;
+            margin-bottom: 8px;
+        }
+
+        .project-card-preview {
+            background: #0d1117;
+            border-radius: 4px;
+            padding: 8px;
+            margin-bottom: 12px;
+            max-height: 100px;
+            overflow: hidden;
+            font-size: 11px;
+            color: #8b949e;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .project-card-footer {
+            display: flex;
+            gap: 8px;
+            font-size: 12px;
+        }
+
+        .project-card-stat {
+            color: #6e7681;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #6e7681;
+        }
+
+        .empty-state-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            opacity: 0.5;
+        }
+
+        .empty-state-text {
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+
+        .context-menu {
+            position: fixed;
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            min-width: 180px;
+            display: none;
+        }
+
+        .context-menu.show {
+            display: block;
+        }
+
+        .context-menu-item {
+            padding: 8px 16px;
+            color: #c9d1d9;
+            cursor: pointer;
+            font-size: 13px;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            transition: background 0.2s;
+        }
+
+        .context-menu-item:hover {
+            background: #0d1117;
+        }
+
+        .context-menu-item.danger {
+            color: #f85149;
+        }
+
+        .context-menu-item.danger:hover {
+            background: #f854491a;
+        }
+
+        .context-menu-divider {
+            height: 1px;
+            background: #30363d;
+            margin: 4px 0;
+        }
+
+        /* Modal Dialog */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 24px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-header {
+            font-size: 18px;
+            font-weight: 600;
+            color: #c9d1d9;
+            margin-bottom: 16px;
+        }
+
+        .modal-body {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            color: #8b949e;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px 12px;
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            color: #c9d1d9;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 13px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #58a6ff;
+            box-shadow: 0 0 8px rgba(88, 166, 255, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .modal-footer {
+            display: flex;
+            gap: 8px;
+            justify-content: flex-end;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+            background: #0d1117;
+            color: #c9d1d9;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background: #161b22;
+            border-color: #58a6ff;
+            color: #58a6ff;
+        }
+
+        .btn-primary {
+            background: #238636;
+            border-color: #2ea043;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2ea043;
+            border-color: #3fb950;
+            color: white;
+        }
+
+        .btn-danger {
+            background: #da3633;
+            border-color: #f85149;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #f85149;
+            border-color: #ff6e7f;
+            color: white;
+        }
+
+        /* Viewer Tab */
+        .viewer-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        #viewport {
+            width: 100%;
+            height: 100%;
+        }
+
+        canvas {
+            display: block;
+            outline: none;
+        }
+
+        .viewer-controls {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            display: flex;
+            gap: 4px;
+            z-index: 15;
+        }
+
+        .viewer-controls button {
+            padding: 5px 10px;
+            border: 1px solid #444;
+            border-radius: 4px;
+            background: #1e2230;
+            color: #aab;
+            font: 11px/1 'Segoe UI', sans-serif;
+            cursor: pointer;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .viewer-controls button:hover {
+            background: #2a3040;
+            color: #dde;
+        }
+
+        .viewer-controls button.active {
+            background: #3a6cff;
+            color: #fff;
+            border-color: #3a6cff;
+        }
+
+        .status {
+            position: fixed;
+            bottom: 8px;
+            left: 8px;
+            color: #666;
+            font: 11px/1 monospace;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .loading {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #4F8CFF;
+            font: 14px/1.4 'Segoe UI', sans-serif;
+            display: none;
+            z-index: 20;
+        }
+
+        .error {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #E55353;
+            font: 14px/1.4 'Segoe UI', sans-serif;
+            text-align: center;
+            display: none;
+            z-index: 30;
+        }
+
+        .tooltip {
+            position: fixed;
+            padding: 5px 10px;
+            background: rgba(20, 22, 30, 0.92);
+            border: 1px solid #3a6cff;
+            border-radius: 4px;
+            color: #dde;
+            font: 11px/1.3 'Segoe UI', sans-serif;
+            pointer-events: none;
+            display: none;
+            z-index: 25;
+            white-space: nowrap;
+        }
+
+        .code-editor-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .code-editor-header h2 {
+            font-size: 18px;
+            color: #c9d1d9;
+        }
+
+        .code-editor-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .code-area {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 12px;
+            height: calc(100% - 60px);
+        }
+
+        .code-area textarea {
+            width: 100%;
+            height: 100%;
+            background: #0d1117;
+            border: none;
+            color: #79c0ff;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            resize: none;
+            padding: 12px;
+        }
+
+        .code-area textarea:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs-header" id="tabsHeader">
+            <button class="tab-button active" data-tab="projects">
+                Projects
+                <span class="close-tab">×</span>
+            </button>
+        </div>
+
+        <div class="tab-content active" id="tab-projects">
+            <div class="content-wrapper">
+                <div class="projects-header">
+                    <h1>My Projects</h1>
+                    <button class="create-project-btn" onclick="openCreateProjectModal()">+ Create Project</button>
+                </div>
+                <div id="projectsList" class="projects-grid"></div>
+                <div id="emptyState" class="empty-state" style="display: none;">
+                    <div class="empty-state-icon">📁</div>
+                    <div class="empty-state-text">No projects yet. Create one to get started!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Context Menu -->
+    <div class="context-menu" id="contextMenu">
+        <button class="context-menu-item" onclick="openProjectInViewer()">Open 3D View</button>
+        <button class="context-menu-item" onclick="openProjectCode()">Open Code</button>
+        <button class="context-menu-item" onclick="openRenameModal()">Rename</button>
+        <div class="context-menu-divider"></div>
+        <button class="context-menu-item danger" onclick="deleteProject()">Delete</button>
+    </div>
+
+    <!-- Create Project Modal -->
+    <div class="modal" id="createProjectModal">
+        <div class="modal-content">
+            <div class="modal-header">Create New Project</div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="projectName">Project Name</label>
+                    <input type="text" id="projectName" placeholder="Enter project name...">
+                </div>
+                <div class="form-group">
+                    <label for="projectJson">Project JSON</label>
+                    <textarea id="projectJson" placeholder="Paste JSON code here...">{}</textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" onclick="closeCreateProjectModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="createProject()">Create</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rename Project Modal -->
+    <div class="modal" id="renameProjectModal">
+        <div class="modal-content">
+            <div class="modal-header">Rename Project</div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="newProjectName">New Name</label>
+                    <input type="text" id="newProjectName" placeholder="Enter new name...">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" onclick="closeRenameModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="renameProject()">Rename</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Lazy load viewer libraries only when needed
+        function loadViewerLibraries() {
+            if (!window.THREE) {
+                const script1 = document.createElement('script');
+                script1.src = 'lib/three.min.js';
+                document.head.appendChild(script1);
+
+                script1.onload = function() {
+                    const script2 = document.createElement('script');
+                    script2.src = 'lib/OrbitControls.js';
+                    document.head.appendChild(script2);
+                };
+            }
+        }
+        window.loadViewerLibraries = loadViewerLibraries;
+    </script>
+    <script src="projects-manager.js"></script>
+</body>
+</html>

@@ -1,0 +1,892 @@
+{
+    "video": {
+        "file": "data/synthetic/v1.mp4",
+        "frame_interval_seconds": 2,
+        "frames_extracted": 10,
+        "frames_successfully_analyzed": 9
+    },
+    "frames": [
+        {
+            "frame_number": 1,
+            "video_timestamp": 0.0,
+            "analysis": {
+                "scene": {
+                    "description": "Wind farm landscape at sunset",
+                    "weather": "clear with scattered clouds",
+                    "time_of_day": "sunset"
+                },
+                "objects": [
+                    {
+                        "type": "wind_turbine",
+                        "position": "middle_left",
+                        "color": "white",
+                        "estimated_size": "large",
+                        "movement": "static",
+                        "confidence": 0.95
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "center",
+                        "color": "dark_gray",
+                        "estimated_size": "medium",
+                        "movement": "static",
+                        "confidence": 0.9
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "middle_right",
+                        "color": "dark_gray",
+                        "estimated_size": "medium",
+                        "movement": "static",
+                        "confidence": 0.9
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "bottom_center",
+                        "color": "dark_gray",
+                        "estimated_size": "medium",
+                        "movement": "static",
+                        "confidence": 0.9
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "bottom_right",
+                        "color": "dark_gray",
+                        "estimated_size": "medium",
+                        "movement": "static",
+                        "confidence": 0.9
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "bottom_left",
+                        "color": "dark_gray",
+                        "estimated_size": "small",
+                        "movement": "static",
+                        "confidence": 0.8
+                    },
+                    {
+                        "type": "mountain",
+                        "position": "bottom_center",
+                        "color": "blue_gray",
+                        "estimated_size": "large",
+                        "movement": "static",
+                        "confidence": 0.9
+                    },
+                    {
+                        "type": "cloud",
+                        "position": "center",
+                        "color": "orange",
+                        "estimated_size": "medium",
+                        "movement": "static",
+                        "confidence": 0.9
+                    }
+                ],
+                "terrain": {
+                    "type": "agricultural_fields",
+                    "color": "dark_green",
+                    "texture": "smooth_segmented",
+                    "vegetation": "crops",
+                    "slope": "flat",
+                    "dryness": "moist",
+                    "ground_condition": "grass",
+                    "confidence": 0.9
+                },
+                "road": {
+                    "present": true,
+                    "type": "paved_access_road",
+                    "color": "gray",
+                    "condition": "good",
+                    "width": "narrow",
+                    "direction_in_image": "curving_from_bottom_center_to_left",
+                    "lane_markings": "none_visible",
+                    "traffic": "none_visible",
+                    "confidence": 0.85
+                },
+                "sun": {
+                    "visible": true,
+                    "position": "center_horizon",
+                    "lighting_direction": "backlit",
+                    "shadow_direction": "towards_camera",
+                    "shadow_length": "long",
+                    "confidence": 0.95
+                },
+                "directions": {
+                    "camera_facing": null,
+                    "north": null,
+                    "east": null,
+                    "south": null,
+                    "west": null
+                }
+            }
+        },
+        {
+            "frame_number": 2,
+            "video_timestamp": 2.0,
+            "analysis": {
+                "scene": {
+                    "description": "A wind farm located in a rural agricultural area during sunset.",
+                    "weather": "Clear sky with some clouds on the horizon, calm.",
+                    "time_of_day": "Sunset / Golden Hour"
+                },
+                "objects": [
+                    {
+                        "type": "wind_turbine",
+                        "position": "middle_left",
+                        "color": "white",
+                        "estimated_size": "large (approx 100m height)",
+                        "movement": "moving (blades rotating)",
+                        "confidence": 0.95
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "center",
+                        "color": "white (silhouette)",
+                        "estimated_size": "large",
+                        "movement": "moving (blades rotating)",
+                        "confidence": 0.9
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "middle_right",
+                        "color": "white (silhouette)",
+                        "estimated_size": "large",
+                        "movement": "moving",
+                        "confidence": 0.8
+                    },
+                    {
+                        "type": "trees",
+                        "position": "bottom_left",
+                        "color": "dark_green",
+                        "estimated_size": "medium",
+                        "movement": "stationary",
+                        "confidence": 0.85
+                    },
+                    {
+                        "type": "trees",
+                        "position": "bottom_center",
+                        "color": "dark_green",
+                        "estimated_size": "medium",
+                        "movement": "stationary",
+                        "confidence": 0.85
+                    },
+                    {
+                        "type": "road",
+                        "position": "bottom_center",
+                        "color": "gray",
+                        "estimated_size": "narrow",
+                        "movement": "stationary",
+                        "confidence": 0.9
+                    }
+                ],
+                "terrain": {
+                    "type": "agricultural_fields",
+                    "color": "dark_green",
+                    "texture": "patchwork, grassy",
+                    "vegetation": "high_density",
+                    "slope": "flat_to_gently_rolling",
+                    "dryness": "lush",
+                    "ground_condition": "well_maintained_grass",
+                    "confidence": 0.9
+                },
+                "road": {
+                    "present": true,
+                    "type": "access_road",
+                    "color": "gray",
+                    "condition": "intact",
+                    "width": "narrow",
+                    "direction_in_image": "curving from bottom_center towards the large turbine",
+                    "lane_markings": "none_visible",
+                    "traffic": "none",
+                    "confidence": 0.95
+                },
+                "sun": {
+                    "visible": true,
+                    "position": "center_horizon",
+                    "lighting_direction": "low_angle_backlight",
+                    "shadow_direction": "away_from_center_horizon",
+                    "shadow_length": "long",
+                    "confidence": 0.95
+                },
+                "directions": {
+                    "camera_facing": null,
+                    "north": null,
+                    "east": null,
+                    "south": null,
+                    "west": null
+                }
+            }
+        },
+        {
+            "frame_number": 3,
+            "video_timestamp": 4.0,
+            "analysis": {
+                "scene": {
+                    "description": "A landscape featuring a wind farm with multiple turbines silhouetted against a sunset sky.",
+                    "weather": "Clear with low clouds near the horizon",
+                    "time_of_day": "Sunset or Sunrise"
+                },
+                "objects": [
+                    {
+                        "type": "wind_turbine",
+                        "position": "center",
+                        "color": "dark_gray",
+                        "estimated_size": "large_tall",
+                        "movement": "static",
+                        "confidence": 0.98
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "middle_right",
+                        "color": "dark_gray",
+                        "estimated_size": "tall",
+                        "movement": "static",
+                        "confidence": 0.95
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "middle_left",
+                        "color": "dark_gray",
+                        "estimated_size": "tall",
+                        "movement": "static",
+                        "confidence": 0.95
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "center",
+                        "color": "dark_gray",
+                        "estimated_size": "medium",
+                        "movement": "static",
+                        "confidence": 0.9
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "far_left",
+                        "color": "dark_gray",
+                        "estimated_size": "small",
+                        "movement": "static",
+                        "confidence": 0.85
+                    },
+                    {
+                        "type": "mountains",
+                        "position": "background",
+                        "color": "dark_blue",
+                        "estimated_size": "large",
+                        "movement": "static",
+                        "confidence": 0.9
+                    },
+                    {
+                        "type": "road",
+                        "position": "bottom_center",
+                        "color": "gray",
+                        "estimated_size": "narrow",
+                        "movement": "static",
+                        "confidence": 0.8
+                    }
+                ],
+                "terrain": {
+                    "type": "agricultural_fields",
+                    "color": "dark_green",
+                    "texture": "grass_crop",
+                    "vegetation": "dense_low_vegetation",
+                    "slope": "flat",
+                    "dryness": "moderate",
+                    "ground_condition": "covered",
+                    "confidence": 0.9
+                },
+                "road": {
+                    "present": true,
+                    "type": "access_road",
+                    "color": "gray",
+                    "condition": "good",
+                    "width": "narrow",
+                    "direction_in_image": "winding_through_fields",
+                    "lane_markings": false,
+                    "traffic": false,
+                    "confidence": 0.85
+                },
+                "sun": {
+                    "visible": true,
+                    "position": "center_horizon",
+                    "lighting_direction": "backlight",
+                    "shadow_direction": "towards_camera",
+                    "shadow_length": "long",
+                    "confidence": 0.95
+                },
+                "directions": {
+                    "camera_facing": null,
+                    "north": null,
+                    "east": null,
+                    "south": null,
+                    "west": null
+                }
+            }
+        },
+        {
+            "frame_number": 4,
+            "video_timestamp": 6.0,
+            "analysis": {
+                "scene": {
+                    "description": "Landscape with wind turbines at sunset",
+                    "weather": "Clear with clouds near horizon",
+                    "time_of_day": "Sunset"
+                },
+                "objects": [
+                    {
+                        "type": "wind_turbine",
+                        "position": "center",
+                        "color": "white",
+                        "estimated_size": "large",
+                        "movement": "stationary",
+                        "confidence": 0.98
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "middle_left",
+                        "color": "white",
+                        "estimated_size": "medium",
+                        "movement": "stationary",
+                        "confidence": 0.95
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "left",
+                        "color": "white",
+                        "estimated_size": "small",
+                        "movement": "stationary",
+                        "confidence": 0.9
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "middle_right",
+                        "color": "white",
+                        "estimated_size": "medium",
+                        "movement": "stationary",
+                        "confidence": 0.95
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "right",
+                        "color": "white",
+                        "estimated_size": "small",
+                        "movement": "stationary",
+                        "confidence": 0.9
+                    },
+                    {
+                        "type": "road",
+                        "position": "bottom_center",
+                        "color": "gray",
+                        "estimated_size": "medium",
+                        "movement": "stationary",
+                        "confidence": 0.9
+                    },
+                    {
+                        "type": "sun",
+                        "position": "center_left",
+                        "color": "bright_orange",
+                        "estimated_size": "small",
+                        "movement": "setting",
+                        "confidence": 0.99
+                    },
+                    {
+                        "type": "clouds",
+                        "position": "top_center",
+                        "color": "orange_pink",
+                        "estimated_size": "large",
+                        "movement": "drifting",
+                        "confidence": 0.9
+                    },
+                    {
+                        "type": "mountains",
+                        "position": "background",
+                        "color": "dark_purple",
+                        "estimated_size": "large",
+                        "movement": "stationary",
+                        "confidence": 0.85
+                    },
+                    {
+                        "type": "vegetation",
+                        "position": "bottom_left",
+                        "color": "dark_green",
+                        "estimated_size": "large",
+                        "movement": "stationary",
+                        "confidence": 0.9
+                    }
+                ],
+                "terrain": {
+                    "type": "grassland",
+                    "color": "dark_green",
+                    "texture": "smooth_grassy",
+                    "vegetation": "high",
+                    "slope": "flat",
+                    "dryness": "normal",
+                    "ground_condition": "natural_ground",
+                    "confidence": 0.9
+                }
+            }
+        },
+        {
+            "frame_number": 5,
+            "video_timestamp": 8.0,
+            "analysis": {
+                "scene": {
+                    "description": "Aerial view of a wind farm with multiple wind turbines in a flat field at sunset.",
+                    "weather": "Clear with some clouds near horizon",
+                    "time_of_day": "Sunset"
+                },
+                "objects": [
+                    {
+                        "type": "wind_turbine",
+                        "position": "center",
+                        "color": "gray",
+                        "estimated_size": "large",
+                        "movement": "stationary",
+                        "confidence": 0.95
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "center_left",
+                        "color": "gray",
+                        "estimated_size": "large",
+                        "movement": "stationary",
+                        "confidence": 0.9
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "middle_left",
+                        "color": "gray",
+                        "estimated_size": "medium",
+                        "movement": "stationary",
+                        "confidence": 0.85
+                    }
+                ]
+            }
+        },
+        {
+            "frame_number": 7,
+            "video_timestamp": 12.0,
+            "analysis": {
+                "scene": {
+                    "description": "Aerial view of a wind farm with multiple turbines situated in open green fields against a sunset sky.",
+                    "weather": "Clear with low clouds or haze near horizon",
+                    "time_of_day": "Sunset"
+                },
+                "objects": [
+                    {
+                        "type": "wind_turbine",
+                        "position": "center_right",
+                        "color": "gray",
+                        "estimated_size": "large",
+                        "movement": "static",
+                        "confidence": 0.95
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "center",
+                        "color": "gray",
+                        "estimated_size": "large",
+                        "movement": "static",
+                        "confidence": 0.95
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "middle_left",
+                        "color": "gray",
+                        "estimated_size": "medium",
+                        "movement": "static",
+                        "confidence": 0.85
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "top_left",
+                        "color": "gray",
+                        "estimated_size": "small",
+                        "movement": "static",
+                        "confidence": 0.8
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "middle_right",
+                        "color": "gray",
+                        "estimated_size": "small",
+                        "movement": "static",
+                        "confidence": 0.8
+                    },
+                    {
+                        "type": "tree_cluster",
+                        "position": "bottom_left",
+                        "color": "dark_green",
+                        "estimated_size": "small",
+                        "movement": "static",
+                        "confidence": 0.9
+                    },
+                    {
+                        "type": "tree",
+                        "position": "center",
+                        "color": "dark_green",
+                        "estimated_size": "medium",
+                        "movement": "static",
+                        "confidence": 0.85
+                    },
+                    {
+                        "type": "mountain_range",
+                        "position": "background",
+                        "color": "dark_brown",
+                        "estimated_size": "very_large",
+                        "movement": "static",
+                        "confidence": 0.9
+                    }
+                ],
+                "terrain": {
+                    "type": "flat_agricultural_land",
+                    "color": "dark_green",
+                    "texture": "smooth_grass",
+                    "vegetation": "grass_and_sparse_trees",
+                    "slope": "flat",
+                    "dryness": "moist",
+                    "ground_condition": "cultivated_fields",
+                    "confidence": 0.85
+                },
+                "road": {
+                    "present": true,
+                    "type": "rural_access_road",
+                    "color": "gray",
+                    "condition": "paved_or_gravel",
+                    "width": "narrow",
+                    "direction_in_image": "horizontal_near_bottom",
+                    "lane_markings": false,
+                    "traffic": false,
+                    "confidence": 0.8
+                },
+                "sun": {
+                    "visible": true,
+                    "position": "center_left_horizon",
+                    "lighting_direction": "from_center_left",
+                    "shadow_direction": "towards_bottom_right",
+                    "shadow_length": "long",
+                    "confidence": 0.95
+                }
+            }
+        },
+        {
+            "frame_number": 8,
+            "video_timestamp": 14.0,
+            "analysis": {
+                "scene": {
+                    "description": "Aerial view of a wind farm with multiple wind turbines standing in green agricultural fields against a sunset sky with clouds and distant mountains.",
+                    "weather": "Clear with some clouds",
+                    "time_of_day": "Sunset"
+                },
+                "objects": [
+                    {
+                        "type": "wind_turbine",
+                        "position": "middle_right",
+                        "color": "white",
+                        "estimated_size": "large",
+                        "movement": "static",
+                        "confidence": 0.95
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "center",
+                        "color": "white",
+                        "estimated_size": "large",
+                        "movement": "static",
+                        "confidence": 0.95
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "middle_left",
+                        "color": "gray",
+                        "estimated_size": "medium",
+                        "movement": "static",
+                        "confidence": 0.85
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "top_left",
+                        "color": "gray",
+                        "estimated_size": "small",
+                        "movement": "static",
+                        "confidence": 0.8
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "middle_right",
+                        "color": "gray",
+                        "estimated_size": "medium",
+                        "movement": "static",
+                        "confidence": 0.8
+                    },
+                    {
+                        "type": "trees",
+                        "position": "bottom_left",
+                        "color": "dark_green",
+                        "estimated_size": "small",
+                        "movement": "static",
+                        "confidence": 0.9
+                    },
+                    {
+                        "type": "trees",
+                        "position": "bottom_center",
+                        "color": "dark_green",
+                        "estimated_size": "small",
+                        "movement": "static",
+                        "confidence": 0.9
+                    },
+                    {
+                        "type": "mountains",
+                        "position": "background",
+                        "color": "blue_gray",
+                        "estimated_size": "large",
+                        "movement": "static",
+                        "confidence": 0.9
+                    },
+                    {
+                        "type": "clouds",
+                        "position": "middle_left",
+                        "color": "dark_gray",
+                        "estimated_size": "large",
+                        "movement": "static",
+                        "confidence": 0.95
+                    }
+                ],
+                "terrain": {
+                    "type": "agricultural_fields",
+                    "color": "green",
+                    "texture": "patched",
+                    "vegetation": "crops_or_grass",
+                    "slope": "flat",
+                    "dryness": "moist",
+                    "ground_condition": "cultivated",
+                    "confidence": 0.9
+                },
+                "road": {
+                    "present": true,
+                    "type": "access_road",
+                    "color": "gray",
+                    "condition": "good",
+                    "width": "narrow",
+                    "direction_in_image": "curving_around_turbine_base",
+                    "lane_markings": "none",
+                    "traffic": "none",
+                    "confidence": 0.85
+                },
+                "sun": {
+                    "visible": true,
+                    "position": "middle_left",
+                    "lighting_direction": "left_to_right",
+                    "shadow_direction": "right",
+                    "shadow_length": "long",
+                    "confidence": 0.95
+                },
+                "directions": {
+                    "camera_facing": null,
+                    "north": null,
+                    "east": null,
+                    "south": null,
+                    "west": null
+                }
+            }
+        },
+        {
+            "frame_number": 9,
+            "video_timestamp": 16.0,
+            "analysis": {
+                "scene": {
+                    "description": "A rural landscape featuring a wind farm with multiple turbines against a sunset sky, with green agricultural fields in the foreground and mountains in the distance.",
+                    "weather": "Clear with scattered clouds near the horizon, likely calm",
+                    "time_of_day": "Sunset"
+                },
+                "objects": [
+                    {
+                        "type": "wind_turbine",
+                        "position": "bottom_right",
+                        "color": "gray",
+                        "estimated_size": "large",
+                        "movement": "stationary",
+                        "confidence": 0.95
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "middle_right",
+                        "color": "gray",
+                        "estimated_size": "large",
+                        "movement": "stationary",
+                        "confidence": 0.95
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "center",
+                        "color": "gray",
+                        "estimated_size": "medium",
+                        "movement": "stationary",
+                        "confidence": 0.9
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "middle_left",
+                        "color": "gray",
+                        "estimated_size": "medium",
+                        "movement": "stationary",
+                        "confidence": 0.85
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "top_left",
+                        "color": "gray",
+                        "estimated_size": "small",
+                        "movement": "stationary",
+                        "confidence": 0.8
+                    },
+                    {
+                        "type": "trees",
+                        "position": "middle_left",
+                        "color": "dark_green",
+                        "estimated_size": "medium",
+                        "movement": "stationary",
+                        "confidence": 0.9
+                    },
+                    {
+                        "type": "mountains",
+                        "position": "middle",
+                        "color": "dark_blue",
+                        "estimated_size": "large",
+                        "movement": "stationary",
+                        "confidence": 0.95
+                    },
+                    {
+                        "type": "car",
+                        "position": "bottom_right",
+                        "color": "dark",
+                        "estimated_size": "very_small",
+                        "movement": "stationary",
+                        "confidence": 0.6
+                    }
+                ],
+                "terrain": {
+                    "type": "agricultural fields",
+                    "color": "green",
+                    "texture": "patchy",
+                    "vegetation": "grass/crops",
+                    "slope": "flat_to_gentle",
+                    "dryness": "unknown",
+                    "ground_condition": "covered",
+                    "confidence": 0.9
+                },
+                "road": {
+                    "present": true,
+                    "type": "access_road",
+                    "color": "gray",
+                    "condition": "visible",
+                    "width": "narrow",
+                    "direction_in_image": "bottom_center_to_right",
+                    "lane_markings": null,
+                    "traffic": "minimal",
+                    "confidence": 0.8
+                },
+                "sun": {
+                    "visible": true,
+                    "position": "middle_left_horizon",
+                    "lighting_direction": "backlight",
+                    "shadow_direction": "towards_camera",
+                    "shadow_length": "long",
+                    "confidence": 0.95
+                },
+                "directions": {
+                    "camera_facing": null,
+                    "north": null,
+                    "east": null,
+                    "south": null,
+                    "west": null
+                }
+            }
+        },
+        {
+            "frame_number": 10,
+            "video_timestamp": 18.0,
+            "analysis": {
+                "scene": {
+                    "description": "A landscape view of a wind farm with fields in the foreground and mountains in the distance during sunset.",
+                    "weather": "Clear sky with low clouds near the horizon, calm conditions.",
+                    "time_of_day": "Sunset or late afternoon"
+                },
+                "objects": [
+                    {
+                        "type": "wind_turbine",
+                        "position": "bottom_right",
+                        "color": "white (light gray in shadows)",
+                        "estimated_size": "large",
+                        "movement": "static",
+                        "confidence": 0.95
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "center",
+                        "color": "white",
+                        "estimated_size": "medium",
+                        "movement": "static",
+                        "confidence": 0.9
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "middle_left",
+                        "color": "silhouette (dark)",
+                        "estimated_size": "small",
+                        "movement": "static",
+                        "confidence": 0.85
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "center_background",
+                        "color": "silhouette (dark)",
+                        "estimated_size": "small",
+                        "movement": "static",
+                        "confidence": 0.8
+                    },
+                    {
+                        "type": "wind_turbine",
+                        "position": "middle_right_background",
+                        "color": "silhouette (dark)",
+                        "estimated_size": "small",
+                        "movement": "static",
+                        "confidence": 0.8
+                    },
+                    {
+                        "type": "road",
+                        "position": "bottom_right",
+                        "color": "gray",
+                        "estimated_size": "narrow strip",
+                        "movement": "static",
+                        "confidence": 0.85
+                    },
+                    {
+                        "type": "vegetation",
+                        "position": "bottom_left",
+                        "color": "dark_green",
+                        "estimated_size": "patch",
+                        "movement": "static",
+                        "confidence": 0.8
+                    },
+                    {
+                        "type": "mountains",
+                        "position": "middle_background",
+                        "color": "dark_blue_gray",
+                        "estimated_size": "large",
+                        "movement": "static",
+                        "confidence": 0.9
+                    }
+                ],
+                "terrain": {
+                    "type": "agricultural_fields",
+                    "color": "green",
+                    "texture": "flat with segmented plots",
+                    "vegetation": "dense crop cover",
+                    "slope": "flat",
+                    "dryness": "likely moist (irrigated fields)",
+                    "ground_condition": "cultivated",
+                    "confidence": 0.9
+                }
+            }
+        }
+    ]
+}

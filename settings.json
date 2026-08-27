@@ -1,0 +1,7 @@
+{
+  "groq_api_key": "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",
+  "groq_model": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "models_dir": "Models",
+  "video_dir": "video",
+  "frame_interval": 2
+}

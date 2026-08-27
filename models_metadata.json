@@ -1,0 +1,188 @@
+{
+    "models": [
+        {
+            "name": "apartment1",
+            "file": "Models/apartment1.glb",
+            "type": "building",
+            "dimensions": {"x": 6.5346, "y": 14.6103, "z": 5.5416},
+            "center": {"x": 0.285, "y": 6.6041, "z": -0.0602},
+            "mesh_count": 24,
+            "file_size_mb": 51.63,
+            "valid": true
+        },
+        {
+            "name": "baldmanindoctoruniform",
+            "file": "Models/baldmanindoctoruniform.glb",
+            "type": "person",
+            "dimensions": {"x": 0.705, "y": 1.5862, "z": 0.3477},
+            "center": {"x": 0.0133, "y": 0.7955, "z": 0.0096},
+            "mesh_count": 5,
+            "file_size_mb": 4.83,
+            "valid": true
+        },
+        {
+            "name": "buildingbig1",
+            "file": "Models/buildingbig1.glb",
+            "type": "building",
+            "dimensions": {"x": 4.1836, "y": 9.9447, "z": 4.1836},
+            "center": {"x": 0.0234, "y": 4.9856, "z": -0.1498},
+            "mesh_count": 6,
+            "file_size_mb": 1.04,
+            "valid": true
+        },
+        {
+            "name": "buildingsmall1",
+            "file": "Models/buildingsmall1.glb",
+            "type": "building",
+            "dimensions": {"x": 1.8218, "y": 4.3305, "z": 1.8218},
+            "center": {"x": 0.0303, "y": 2.1785, "z": 0.1123},
+            "mesh_count": 6,
+            "file_size_mb": 0.87,
+            "valid": true
+        },
+        {
+            "name": "bush",
+            "file": "Models/bush.glb",
+            "type": "vegetation",
+            "dimensions": {"x": 1.3151, "y": 1.8891, "z": 1.3353},
+            "center": {"x": -0.0175, "y": 0.9327, "z": 0.0323},
+            "mesh_count": 1,
+            "file_size_mb": 0.48,
+            "valid": true
+        },
+        {
+            "name": "crosssectionroad",
+            "file": "Models/crosssectionroad.glb",
+            "type": "road",
+            "dimensions": {"x": 10.2893, "y": 0.1715, "z": 10.2893},
+            "center": {"x": 0.1168, "y": 0.0857, "z": 0.0},
+            "mesh_count": 1,
+            "file_size_mb": 1.96,
+            "valid": true
+        },
+        {
+            "name": "dustbin",
+            "file": "Models/dustbin.glb",
+            "type": "object",
+            "dimensions": {"x": 4.1632, "y": 1.1787, "z": 8.7308},
+            "center": {"x": 0.1214, "y": 0.4439, "z": 0.1825},
+            "mesh_count": 11,
+            "file_size_mb": 1.63,
+            "valid": true,
+            "notes": "Model appears oversized for a dustbin, apply scale correction"
+        },
+        {
+            "name": "leftturnroad",
+            "file": "Models/leftturnroad.glb",
+            "type": "road",
+            "dimensions": {"x": 8.7413, "y": 0.2372, "z": 12.8945},
+            "center": {"x": -1.0237, "y": -0.3711, "z": -1.1351},
+            "mesh_count": 1,
+            "file_size_mb": 1.94,
+            "valid": true
+        },
+        {
+            "name": "male",
+            "file": "Models/male.glb",
+            "type": "person",
+            "dimensions": {"x": 4.1632, "y": 1.805, "z": 8.7308},
+            "center": {"x": 0.1214, "y": 0.757, "z": 0.1825},
+            "mesh_count": 2,
+            "file_size_mb": 23.74,
+            "valid": true,
+            "notes": "Model includes road surface geometry"
+        },
+        {
+            "name": "malestudent",
+            "file": "Models/malestudent.glb",
+            "type": "person",
+            "dimensions": {"x": 0.6619, "y": 1.9041, "z": 0.3253},
+            "center": {"x": 0.0207, "y": 0.9629, "z": 0.0045},
+            "mesh_count": 1,
+            "file_size_mb": 9.02,
+            "valid": true
+        },
+        {
+            "name": "noleftturnsignboard",
+            "file": "Models/noleftturnsignboard.glb",
+            "type": "sign",
+            "dimensions": {"x": 4.1632, "y": 3.7797, "z": 8.7308},
+            "center": {"x": 0.1214, "y": 1.7444, "z": 0.1825},
+            "mesh_count": 2,
+            "file_size_mb": 9.6,
+            "valid": true,
+            "notes": "Includes road surface geometry"
+        },
+        {
+            "name": "norightturnsignboard",
+            "file": "Models/norightturnsignboard.glb",
+            "type": "sign",
+            "dimensions": {"x": 0.8689, "y": 3.8716, "z": 0.0732},
+            "center": {"x": -0.0119, "y": 1.9567, "z": 0.0205},
+            "mesh_count": 1,
+            "file_size_mb": 8.12,
+            "valid": true
+        },
+        {
+            "name": "nouturnsignboard",
+            "file": "Models/nouturnsignboard.glb",
+            "type": "sign",
+            "dimensions": {"x": 4.1632, "y": 3.3506, "z": 8.7308},
+            "center": {"x": 0.1214, "y": 1.5298, "z": 0.1825},
+            "mesh_count": 2,
+            "file_size_mb": 9.6,
+            "valid": true,
+            "notes": "Includes road surface geometry"
+        },
+        {
+            "name": "rightturnroad",
+            "file": "Models/rightturnroad.glb",
+            "type": "road",
+            "dimensions": {"x": 8.7413, "y": 0.2372, "z": 12.8945},
+            "center": {"x": 2.2867, "y": -0.1184, "z": -2.0909},
+            "mesh_count": 1,
+            "file_size_mb": 1.94,
+            "valid": true
+        },
+        {
+            "name": "routeboard",
+            "file": "Models/routeboard.glb",
+            "type": "sign",
+            "dimensions": {"x": 6.0666, "y": 6.9804, "z": 0.1368},
+            "center": {"x": 0.182, "y": 3.3572, "z": -0.0035},
+            "mesh_count": 1,
+            "file_size_mb": 8.13,
+            "valid": true
+        },
+        {
+            "name": "straightroad",
+            "file": "Models/straightroad.glb",
+            "type": "road",
+            "dimensions": {"x": 4.1632, "y": 0.2372, "z": 8.7308},
+            "center": {"x": 0.1214, "y": -0.0269, "z": 0.1825},
+            "mesh_count": 1,
+            "file_size_mb": 1.48,
+            "valid": true
+        },
+        {
+            "name": "tree",
+            "file": "Models/tree.glb",
+            "type": "vegetation",
+            "dimensions": {"x": 2.5692, "y": 3.3025, "z": 3.0305},
+            "center": {"x": -0.0785, "y": 1.6449, "z": -0.0382},
+            "mesh_count": 2,
+            "file_size_mb": 1.13,
+            "valid": true
+        },
+        {
+            "name": "windturbine",
+            "file": "Models/windturbine.glb",
+            "type": "structure",
+            "dimensions": {"x": 3.4412, "y": 6.1354, "z": 1.3236},
+            "center": {"x": 0.3157, "y": 3.1003, "z": -0.0051},
+            "mesh_count": 2,
+            "file_size_mb": 4.05,
+            "valid": true
+        }
+    ]
+}

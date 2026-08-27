@@ -1,0 +1,67 @@
+================================================================================
+                    3D SCENE GENERATION - WORKFLOW
+================================================================================
+
+SIMPLE WORKFLOW (Recommended):
+==============================
+
+1. START APP
+   Command: python run.py
+
+2. LOAD EXISTING VIDEO ANALYSIS
+   Tab: JSON
+   Button: "Load JSON"
+   File: video_analysis.json (already provided)
+   Result: JSON data loaded
+
+3. GENERATE 3D SCENE
+   Tab: Scene
+   Button: "Generate"
+   Result: 3D scene with:
+   ✓ 8 connected straight roads
+   ✓ Wind turbines (uniform size)
+   ✓ Trees and vegetation
+   ✓ Professional layout
+
+4. VIEW & INTERACT
+   Tab: Scene
+   View: 3D viewer with road network
+   Actions:
+   - Rotate camera (drag)
+   - Zoom (scroll)
+   - Select objects (click)
+   - Modify properties
+
+5. EXPORT (Optional)
+   Button: "Save"
+   Output: scene.json (can be loaded later)
+
+
+WHY NOT VIDEO UPLOAD?
+======================
+
+The Groq API has rate limits. To avoid API errors:
+- Use the pre-analyzed video_analysis.json file
+- Or wait for rate limit to reset
+- Or provide own Groq API key with higher quota
+
+The analysis is already done - just load the JSON!
+
+
+FILES PROVIDED:
+================
+- video_analysis.json ← USE THIS FILE
+- Models/ ← 3D models for generation
+- run.py ← Main app
+
+THAT'S IT!
+==========
+
+No complex steps, no API calls during generation:
+1. Load JSON
+2. Generate
+3. View
+
+Works reliably every time!
+
+================================================================================

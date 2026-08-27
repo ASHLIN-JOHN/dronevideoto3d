@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone 3D Studio Viewer</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #0F1117;
+        }
+        #viewport {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        canvas {
+            display: block;
+            outline: none;
+        }
+        #status {
+            position: fixed;
+            bottom: 8px;
+            left: 8px;
+            color: #666;
+            font: 11px/1 monospace;
+            pointer-events: none;
+            z-index: 10;
+        }
+        #view-modes {
+            position: fixed;
+            top: 8px;
+            left: 8px;
+            display: flex;
+            gap: 4px;
+            z-index: 15;
+        }
+        #view-modes button {
+            padding: 5px 10px;
+            border: 1px solid #444;
+            border-radius: 4px;
+            background: #1e2230;
+            color: #aab;
+            font: 11px/1 'Segoe UI', sans-serif;
+            cursor: pointer;
+            transition: background 0.15s, color 0.15s;
+        }
+        #view-modes button:hover {
+            background: #2a3040;
+            color: #dde;
+        }
+        #view-modes button.active {
+            background: #3a6cff;
+            color: #fff;
+            border-color: #3a6cff;
+        }
+        #loading {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #4F8CFF;
+            font: 14px/1.4 'Segoe UI', sans-serif;
+            display: none;
+            z-index: 20;
+        }
+        #error {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #E55353;
+            font: 14px/1.4 'Segoe UI', sans-serif;
+            text-align: center;
+            display: none;
+            z-index: 30;
+        }
+        #tooltip {
+            position: fixed;
+            padding: 5px 10px;
+            background: rgba(20, 22, 30, 0.92);
+            border: 1px solid #3a6cff;
+            border-radius: 4px;
+            color: #dde;
+            font: 11px/1.3 'Segoe UI', sans-serif;
+            pointer-events: none;
+            display: none;
+            z-index: 25;
+            white-space: nowrap;
+        }
+    </style>
+    <script src="lib/three.min.js"></script>
+    <script src="lib/OrbitControls.js"></script>
+    <script src="lib/TransformControls.js"></script>
+    <script src="lib/GLTFLoader.js"></script>
+    <script src="lib/DRACOLoader.js"></script>
+    <script src="qwebchannel.js"></script>
+</head>
+<body>
+    <div id="viewport"></div>
+    <div id="view-modes">
+        <button class="active" onclick="window.viewer_setViewMode('render')">Render</button>
+        <button onclick="window.viewer_setViewMode('object')">Object</button>
+        <button onclick="window.viewer_setViewMode('edit')">Edit</button>
+        <button onclick="window.viewer_setViewMode('wireframe')">Wireframe</button>
+        <button id="shadow-btn" onclick="window.viewer_toggleShadows()">Shadows</button>
+    </div>
+    <div id="status"></div>
+    <div id="loading">Loading model...</div>
+    <div id="error"></div>
+    <div id="tooltip"></div>
+    <script>
+        window.onerror = function(msg, url, line) {
+            document.getElementById('error').style.display = 'block';
+            document.getElementById('error').textContent = 'JS Error: ' + msg;
+        };
+        if (typeof THREE === 'undefined') {
+            document.getElementById('error').style.display = 'block';
+            document.getElementById('error').textContent = 'Three.js failed to load from CDN. Check internet connection.';
+        }
+    </script>
+    <script src="viewer.js"></script>
+</body>
+</html>

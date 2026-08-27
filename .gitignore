@@ -1,0 +1,16 @@
+.env
+.cache/
+logs/
+__pycache__/
+*.pyc
+*.pyo
+output/
+node_modules/
+Models/syntheticdontseethisfolder/
+Models/Terrains/HdrOutdoorFieldBaseballDayClear001/HdrOutdoorFieldBaseballDayClear001_HDR_8K.exr
+*.mov
+*.mp4
+*.zip
+video/
+projects/
+.git/objects/

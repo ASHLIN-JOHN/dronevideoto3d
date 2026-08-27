@@ -1,0 +1,8 @@
+PyQt5>=5.15
+PyQtWebEngine>=5.15
+opencv-python>=4.8
+groq>=1.0
+python-dotenv>=1.0
+trimesh>=4.0
+pygltflib>=1.0
+numpy>=1.24
